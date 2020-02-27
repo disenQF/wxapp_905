@@ -1,0 +1,41 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/me/me",
+    "pages/cart/cart",
+    "pages/cate/cate",
+    "pages/detail/detail"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#884",
+    "navigationBarTitleText": "热点房源",
+    "navigationBarTextStyle": "white",
+    "enablePullDownRefresh": false,
+    "pageOrientation": "portrait"
+  },
+  "tabBar": {
+    "selectedColor": "#f00",
+    "position": "bottom",
+    "borderStyle": "black",
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "首页",
+      "iconPath": "/res/icons/home.png",
+      "selectedIconPath": "/res/icons/home_active.png"
+    },{
+      "pagePath": "pages/cart/cart",
+      "text": "购物车",
+      "iconPath": "/res/icons/cart.png",
+      "selectedIconPath": "/res/icons/cart_active.png"
+    },{
+      "pagePath": "pages/me/me",
+      "text": "我的",
+      "iconPath": "/res/icons/user.png",
+      "selectedIconPath": "/res/icons/user_active.png"
+    }]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}
