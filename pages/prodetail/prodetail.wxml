@@ -1,0 +1,18 @@
+<scroll-view class="content">
+  <view class="h3">
+    <text>{{proname}}</text>
+  </view>
+  <view class="h4">
+    <text>{{brand}}</text>
+  </view>
+  <image src="{{brandimg}}"></image>
+  <image src="{{proimg}}" bindtap="showImg" data-url="{{proimg}}"></image>
+  <rich-text class="richtext" style="height:500rpx;">
+    {{detail}}
+  </rich-text>
+
+</scroll-view>
+<view class="btnView">
+  <button class="addCart">加入购物车</button>
+  <button class="toOrder">立即购买</button>
+</view>

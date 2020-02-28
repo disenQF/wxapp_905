@@ -8,3 +8,21 @@
   padding: 200rpx 0;
   box-sizing: border-box;
 } 
+
+.h3,.h4,.h5 {
+  color: blue;
+  padding: 10rpx;
+  background-color: #4f4f4f65;
+}
+
+.h3 text{
+   font-size: 35rpx;
+}
+
+.h4 text{
+   font-size: 25rpx;
+}
+
+.h5 text{
+   font-size: 15rpx;
+}

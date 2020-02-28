@@ -67,6 +67,14 @@
 					"id": -1,
 					"name": "pages/index/index",
 					"pathName": "pages/index/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/detail/detail",
+					"pathName": "pages/detail/detail",
+					"query": "proid=pro_2e484bc0-0d0c-11ea-95cf-638637aea6a0",
 					"scene": null
 				}
 			]

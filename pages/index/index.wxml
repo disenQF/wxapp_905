@@ -1,5 +1,8 @@
 <!--index.wxml-->
-<view wx:for="{{ items }}" wx:key="l1" class="li">
-  <view>{{item.proname}}</view>
-  <image src="{{item.proimg}}" class="proimg"></image>
+<view>
+  <view wx:for="{{ items }}" wx:key="l1" class="li" bindtap="showDetail" data-proid="{{item.proid}}">
+    <view>{{item.proname}}</view>
+    <image src="{{item.proimg}}" 
+        lazy-load="true" class="proimg"></image>
+  </view>
 </view>

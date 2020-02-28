@@ -1,2 +1,16 @@
 <!--pages/detail/detail.wxml-->
-<text>pages/detail/detail.wxml</text>
+<button bindtap="toggleContent">
+ <icon type="warn" size="15" color="blue"/>{{content}}
+</button>
+<view class="ul" wx:if="{{flag}}">
+  <view class="li">A</view>
+  <view class="li">B</view>
+  <view class="li">C</view>
+</view>
+<view wx:else>
+     <radio-group bind:change="sexHandler">
+        <radio wx:for="{{sexs}}" wx:key="s1" value="{{item}}">
+          <text>{{item}}</text>
+        </radio>
+      </radio-group>
+</view>

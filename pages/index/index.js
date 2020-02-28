@@ -39,7 +39,7 @@ Page({
        }
     }).then(res=>{
       console.info(res)
-      // 更新页面的数据
+      // 更新页面的数据， 对应修改是Page中data属性
       this.setData({
          items:  [...res.data.data]
       })
@@ -98,6 +98,16 @@ Page({
       }
     }).catch(e => {
       console.error(e)
+    })
+  },
+  showDetail: function(e){
+    // 获取事件的数据，通过data-* 来设置的
+    const {proid} = e.currentTarget.dataset
+    
+    // 打开详情页面
+    // 跳转页面的url中，以/开头，表示绝对路径
+    wx.navigateTo({
+      url: '/pages/prodetail/prodetail?proid='+proid
     })
   }
 })

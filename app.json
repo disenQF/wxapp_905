@@ -5,7 +5,8 @@
     "pages/me/me",
     "pages/cart/cart",
     "pages/cate/cate",
-    "pages/detail/detail"
+    "pages/detail/detail",
+    "pages/prodetail/prodetail"
   ],
   "window": {
     "backgroundTextStyle": "dark",

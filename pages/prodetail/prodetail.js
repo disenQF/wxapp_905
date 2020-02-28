@@ -1,19 +1,45 @@
-// pages/detail/detail.js
+// pages/prodetail/prodetail.js
+import {request} from "../../utils/network_.js"
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-     flag: true,
-     content: "隐藏数据",
-     sexs: ["男","女", "保密"]
+     proid: '',
+     proname:'',
+     proimg: "",
+     price: 0.0,
+     brandimg: "",
+     brand:"",
+     detail: ""
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+     const {proid} = options
+     const obj = this
+     request({
+       path: '/pro/detail',
+       data: {
+         proid: proid
+       }
+     }).then(res=>{
+       console.log(res)
+       const {proname, proimg, price, brandimg, detail,brand} = res.data.data
+       obj.setData({
+          proid: proid,
+          proimg: proimg,
+          proname: proname,
+          brandimg:brandimg,
+          brand:brand,
+          price: price,
+          detail: detail
+       })
+     })
 
   },
 
@@ -65,14 +91,10 @@ Page({
   onShareAppMessage: function () {
 
   },
-  toggleContent: function(e){
-    const is_show = !this.data.flag
-    this.setData({
-      flag: is_show,
-      content: is_show?"隐藏数据":"显示数据"
+  showImg: function(e){
+    const {url} = e.currentTarget.dataset
+    wx.previewImage({
+      urls: [url]
     })
-  },
-  sexHandler: function(e){
-    console.log(e.detail)
   }
 })

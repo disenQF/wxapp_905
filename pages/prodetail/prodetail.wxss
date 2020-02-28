@@ -1,0 +1,16 @@
+/* pages/prodetail/prodetail.wxss */
+
+.content{
+  margin-bottom: 80rpx;
+  background-color: lightcoral;
+  overflow: auto;
+}
+
+.btnView{
+  position: absolute;
+  bottom: 0px;
+  height: 80rpx;
+  background-color: lightcyan;
+  display: flex;
+  flex-flow: row;
+}
