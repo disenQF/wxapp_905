@@ -67,6 +67,8 @@ Page({
       // 解构对象
       // options = {index: 1, pagePath: "pages/cart/cart", text: "购物车"}
       const {index, pagePath, text} = options
+
+      // 更新当前页面的数据
       this.setData({
         title: text
       })

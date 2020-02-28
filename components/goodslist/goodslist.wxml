@@ -1,0 +1,16 @@
+<!--components/goodslist/goodslist.wxml-->
+<view>{{ content }}</view>
+<view class="li" bindtap="showGoods" data-id="1">商品1</view>
+<view class="li">商品2</view>
+<view class="li">商品3</view>
+<view class="li">商品4</view>
+<view class="li">商品5</view>
+<view class="li">商品6</view>
+<view class="li">商品7</view>
+<view class="li">商品6</view>
+<view class="li">商品611</view>
+<view class="li">商品622</view>
+<view class="li">商品62211</view>
+<view class="li">商品633</view>
+<view class="li">商品645</view>
+<view class="li">商品10</view>

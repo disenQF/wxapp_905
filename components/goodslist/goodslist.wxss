@@ -1,13 +1,8 @@
+/* components/goodslist/goodslist.wxss */
 .li{
   border: 1px solid lightcyan;
   border-radius: 10px;
   margin: 10px;
   padding: 5px;
   height: 100px;
-}
-
-.proimg{
-  width: 30%;
-  height: 50%;
-  margin: 10px;
 }

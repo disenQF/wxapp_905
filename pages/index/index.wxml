@@ -1,12 +1,5 @@
 <!--index.wxml-->
-
-<view class="li">列表1</view>
-<view class="li">列表1</view>
-<view class="li">列表1</view>
-<view class="li">列表1</view>
-<view class="li">列表1</view>
-<view class="li">列表1</view>
-<view class="li">列表1</view>
-<view class="li">列表1</view>
-<view class="li">列表1</view>
-
+<view wx:for="{{ items }}" wx:key="l1" class="li">
+  <view>{{item.proname}}</view>
+  <image src="{{item.proimg}}" class="proimg"></image>
+</view>

@@ -62,5 +62,9 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  showDataItem: function(event){
+     console.info('---页面中（组件外部）处理事件，接收参数---')
+     console.info("--显示的Item-ID-"+event.detail.item_id)
   }
 })
