@@ -6,7 +6,8 @@ const app = getApp() // app.js创建的App对象
 
 Page({
   data: {
-     items: []
+     items: [],
+     page: 0 //当前页码
   },
 
   onLoad: function () {
@@ -38,6 +39,7 @@ Page({
        }
     }).then(res=>{
       console.info(res)
+      // 更新页面的数据
       this.setData({
          items:  [...res.data.data]
       })
@@ -49,15 +51,53 @@ Page({
   },
   onPullDownRefresh: function(){
     console.info('--下拉刷新---')
+    request({
+      path: '/pro',
+      data: {
+        pageCode: 0,
+        limitNum: 20
+      }
+    }).then(res => {
+      console.info(res)
+      this.setData({
+        items: [...res.data.data],
+        page: 0
+      })
+
+      wx.stopPullDownRefresh() // 停止下拉刷新
+
+    }).catch(e => {
+      console.error(e)
+    })
+
   },
   onReachBottom: function(){
     console.info('--上拉加载更多---')
+    // 获取当前页码
+    const currentPage = this.data.page
+    const currentData = this.data.items
 
-    wx.showLoading({
-      title: '正在加载数据',
+    request({
+      path: '/pro',
+      data: {
+        pageCode: currentPage+1,
+        limitNum: 20
+      }
+    }).then(res => {
+      console.info(res)
+      const {code, message, data} = res.data
+      if(code == "10000"){
+          wx.showToast({
+            title: message
+          })
+      }else{
+        this.setData({
+          items: [...currentData, ...res.data.data],  // 累加数据
+          page: currentPage + 1
+        })
+      }
+    }).catch(e => {
+      console.error(e)
     })
-    setTimeout(()=>{
-      wx.hideLoading()  // 隐藏加载更多
-    },5000)
   }
 })
